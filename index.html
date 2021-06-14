@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>슈슉. 슉.</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script>
+var arr = ["슈슉 슈숙. ", "슈숙. ", "슉. ", "시. ", "시발럼아. ", "시발롬아. "];
+
+$(function() {
+    console.log( "ready!" );
+    var i = 0;
+    var brand = 0;
+    while(i<100){
+        var rand = Math.floor(Math.random() * 6);
+        
+        if(brand<=rand)
+        {
+            $("p").text($("p").text() + arr[rand]);
+            brand = rand;
+	if(brand>4) { brand = 0 }
+            i++;
+        }
+    }
+});
+$("document").keypress(function(e){
+ var keyCode = e.which;
+ 
+ if ( (keyCode >= 48 && keyCode <= 57) 
+   || (keyCode >= 65 && keyCode <= 90) 
+   || (keyCode >= 97 && keyCode <= 122) ) {
+   e.preventDefault();
+
+ }
+});
+</script>
+</head>
+<body>
+<h1>슈슉 생성기</h1>
+<p></p>
+</body>
