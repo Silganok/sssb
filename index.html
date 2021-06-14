@@ -9,15 +9,17 @@ var arr = ["슈슉 슈숙. ", "슈숙. ", "슉. ", "시. ", "시발럼아. ", "�
 $(function() {
     console.log( "ready!" );
     var i = 0;
-    var brand = 0;
+    var brand = -1;
     while(i<100){
         var rand = Math.floor(Math.random() * 6);
         
-        if(brand<=rand)
+        if(brand<rand)
         {
             $("p").text($("p").text() + arr[rand]);
             brand = rand;
-	if(rand>3) { brand = 0 }
+            if(rand<2) { brand = 1 }
+            if(rand=3) { brand = 2 }
+	if(rand>3) { brand = -1 }
             i++;
         }
     }
